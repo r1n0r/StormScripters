@@ -178,7 +178,7 @@ const SignupPage = () => {
                 </form>
                 <p className="text-center text-base font-medium text-body-color">
                   Already using Startup?{" "}
-                  <Link href="/signin" className="text-primary hover:underline">
+                  <Link href="aflogin.tsx" className="text-primary hover:underline">
                     Sign in
                   </Link>
                 </p>
