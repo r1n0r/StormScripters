@@ -1,14 +1,37 @@
+"use client"
 import Link from "next/link";
-
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Sign Up Page | Free Next.js Template for Startup and SaaS",
-  description: "This is Sign Up Page for Startup Nextjs Template",
-  // other metadata
-};
+import { useState, useEffect } from "react";
 
 const SignupPage = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    setMessage("");
+    try {
+      const res = await fetch("http://localhost/JunctionX/api/register.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, password }),
+      });
+      const data = await res.json();
+      setMessage(data.message);
+      if (data.success) {
+        setName("");
+        setEmail("");
+        setPassword("");
+      }
+    } catch (err) {
+      setMessage("Registration failed. Please try again.");
+    }
+    setLoading(false);
+  };
+
   return (
     <>
       <section className="relative z-10 overflow-hidden pb-16 pt-36 md:pb-20 lg:pb-28 lg:pt-[180px]">
@@ -20,7 +43,7 @@ const SignupPage = () => {
                   Create your account
                 </h3>
                 <p className="mb-11 text-center text-base font-medium text-body-color">
-                  It’s totally free and super easy
+                  It's totally free and super easy
                 </p>
                 <button className="border-stroke dark:text-body-color-dark dark:shadow-two mb-6 flex w-full items-center justify-center rounded-sm border bg-[#f8f8f8] px-6 py-3 text-base text-body-color outline-none transition-all duration-300 hover:border-primary hover:bg-primary/5 hover:text-primary dark:border-transparent dark:bg-[#2C303B] dark:hover:border-primary dark:hover:bg-primary/5 dark:hover:text-primary dark:hover:shadow-none">
                   <span className="mr-3">
@@ -80,50 +103,47 @@ const SignupPage = () => {
                   </p>
                   <span className="hidden h-[1px] w-full max-w-[60px] bg-body-color/50 sm:block"></span>
                 </div>
-                <form>
+                <form onSubmit={handleSubmit}>
                   <div className="mb-8">
-                    <label
-                      htmlFor="name"
-                      className="mb-3 block text-sm text-dark dark:text-white"
-                    >
-                      {" "}
-                      Full Name{" "}
+                    <label htmlFor="name" className="mb-3 block text-sm text-dark dark:text-white">
+                      Full Name
                     </label>
                     <input
                       type="text"
                       name="name"
+                      value={name}
+                      onChange={e => setName(e.target.value)}
                       placeholder="Enter your full name"
                       className="border-stroke dark:text-body-color-dark dark:shadow-two w-full rounded-sm border bg-[#f8f8f8] px-6 py-3 text-base text-body-color outline-none transition-all duration-300 focus:border-primary dark:border-transparent dark:bg-[#2C303B] dark:focus:border-primary dark:focus:shadow-none"
+                      required
                     />
                   </div>
                   <div className="mb-8">
-                    <label
-                      htmlFor="email"
-                      className="mb-3 block text-sm text-dark dark:text-white"
-                    >
-                      {" "}
-                      Work Email{" "}
+                    <label htmlFor="email" className="mb-3 block text-sm text-dark dark:text-white">
+                      Work Email
                     </label>
                     <input
                       type="email"
                       name="email"
+                      value={email}
+                      onChange={e => setEmail(e.target.value)}
                       placeholder="Enter your Email"
                       className="border-stroke dark:text-body-color-dark dark:shadow-two w-full rounded-sm border bg-[#f8f8f8] px-6 py-3 text-base text-body-color outline-none transition-all duration-300 focus:border-primary dark:border-transparent dark:bg-[#2C303B] dark:focus:border-primary dark:focus:shadow-none"
+                      required
                     />
                   </div>
                   <div className="mb-8">
-                    <label
-                      htmlFor="password"
-                      className="mb-3 block text-sm text-dark dark:text-white"
-                    >
-                      {" "}
-                      Your Password{" "}
+                    <label htmlFor="password" className="mb-3 block text-sm text-dark dark:text-white">
+                      Your Password
                     </label>
                     <input
                       type="password"
                       name="password"
+                      value={password}
+                      onChange={e => setPassword(e.target.value)}
                       placeholder="Enter your Password"
                       className="border-stroke dark:text-body-color-dark dark:shadow-two w-full rounded-sm border bg-[#f8f8f8] px-6 py-3 text-base text-body-color outline-none transition-all duration-300 focus:border-primary dark:border-transparent dark:bg-[#2C303B] dark:focus:border-primary dark:focus:shadow-none"
+                      required
                     />
                   </div>
                   <div className="mb-8 flex">
@@ -171,10 +191,11 @@ const SignupPage = () => {
                     </label>
                   </div>
                   <div className="mb-6">
-                    <button className="shadow-submit dark:shadow-submit-dark flex w-full items-center justify-center rounded-sm bg-primary px-9 py-4 text-base font-medium text-white duration-300 hover:bg-primary/90">
-                      Sign up
+                    <button type="submit" className="shadow-submit dark:shadow-submit-dark flex w-full items-center justify-center rounded-sm bg-primary px-9 py-4 text-base font-medium text-white duration-300 hover:bg-primary/90" disabled={loading}>
+                      {loading ? "Registering..." : "Sign up"}
                     </button>
                   </div>
+                  {message && <p className="text-center text-base font-medium text-body-color">{message}</p>}
                 </form>
                 <p className="text-center text-base font-medium text-body-color">
                   Already using Startup?{" "}
