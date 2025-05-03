@@ -8,8 +8,14 @@ const Features = () => {
       <section id="features" className="py-16 md:py-20 lg:py-28">
         <div className="container">
           <SectionTitle
-            title="Main Features"
-            paragraph="There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form."
+            title="Plan & Prepare"
+            paragraph="Before you jump into any career path, it's important to have a clear plan.
+             This is where you set your goals, explore your options, and create a roadmap for your future.
+              Whether you want to go to university, learn a trade, or start working,
+              we’ll help you break your big dreams into realistic, step-by-step actions. 
+              The better you prepare now, the smoother your journey will be later.
+
+"
             center
           />
 

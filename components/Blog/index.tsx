@@ -10,8 +10,8 @@ const Blog = () => {
     >
       <div className="container">
         <SectionTitle
-          title="Our Latest Blogs"
-          paragraph="There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form."
+          title="Latest News from TBU"
+          paragraph="Stay updated with the latest developments, achievements, and opportunities at Tirana Business University. Our blog keeps you informed about student success stories, new initiatives, and university partnerships."
           center
         />
 

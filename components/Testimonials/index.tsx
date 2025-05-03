@@ -5,28 +5,28 @@ import SingleTestimonial from "./SingleTestimonial";
 const testimonialData: Testimonial[] = [
   {
     id: 1,
-    name: "Musharof Chy",
-    designation: "Founder @TailGrids",
+    name: "Arben Krasniqi",
+    designation: "Computer Science Graduate",
     content:
-      "Our members are so impressed. It's intuitive. It's clean. It's distraction free. If you're building a community.",
+      "Falë udhëzimeve të këtij platformi, gjeta punën time të ëndrrave në një kompani teknologjike të njohur. Mjetet e vlerësimit të aftësive më ndihmuan të kuptoj forcat e mia dhe të zhvilloj një plan të qartë karriere.",
     image: "/images/testimonials/auth-01.png",
     star: 5,
   },
   {
     id: 2,
-    name: "Devid Weilium",
-    designation: "Founder @UIdeck",
+    name: "Arian Hoxha",
+    designation: "Business Administration Student",
     content:
-      "Our members are so impressed. It's intuitive. It's clean. It's distraction free. If you're building a community.",
+      "Burimet e platformës më ndihmuan të zbuloj pasionin tim për marketingun. Këshilluesit e karrierës më dhanë këshilla praktike që bënë ndryshimin në kërkimin tim të punës. Rekomandoj shumë!",
     image: "/images/testimonials/auth-02.png",
-    star: 5,
+    star: 4,
   },
   {
     id: 3,
-    name: "Lethium Frenci",
-    designation: "Founder @Lineicons",
+    name: "Bardhyl Dervishi",
+    designation: "Engineering Graduate",
     content:
-      "Our members are so impressed. It's intuitive. It's clean. It's distraction free. If you're building a community.",
+      "Mbështetja për planifikimin e karrierës ishte e jashtëzakonshme. Mora udhëzime për gjithçka, nga ndërtimi i CV-së deri te përgatitja për intervista. Njohuritë e industrisë më ndihmuan të marr vendime të informuara për karrierën time.",
     image: "/images/testimonials/auth-03.png",
     star: 5,
   },
@@ -37,8 +37,8 @@ const Testimonials = () => {
     <section className="dark:bg-bg-color-dark bg-gray-light relative z-10 py-16 md:py-20 lg:py-28">
       <div className="container">
         <SectionTitle
-          title="What Our Users Says"
-          paragraph="There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form."
+          title="Çfarë Thonë Studentët Tanë"
+          paragraph="Dëgjoni nga studentët tanë për përvojat dhe historitë e tyre të suksesit. Përshtypjet e tyre na ndihmojnë të përmirësojmë vazhdimisht shërbimet tona të zhvillimit të karrierës."
           center
         />
 

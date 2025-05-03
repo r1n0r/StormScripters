@@ -24,8 +24,8 @@ const AboutSectionOne = () => {
           <div className="-mx-4 flex flex-wrap items-center">
             <div className="w-full px-4 lg:w-1/2">
               <SectionTitle
-                title="Crafted for Startup, SaaS and Business Sites."
-                paragraph="The main ‘thrust’ is to focus on educating attendees on how to best protect highly vulnerable business applications with interactive panel discussions and roundtables."
+                title="Why Choose Us for Your Career Journey"
+                paragraph="We stand out as your trusted career development partner because we understand that every career path is unique. Our comprehensive approach combines expert guidance, personalized tools, and continuous support to help you achieve your professional goals."
                 mb="44px"
               />
 
@@ -35,15 +35,15 @@ const AboutSectionOne = () => {
               >
                 <div className="mx-[-12px] flex flex-wrap">
                   <div className="w-full px-3 sm:w-1/2 lg:w-full xl:w-1/2">
-                    <List text="Premium quality" />
-                    <List text="Tailwind CSS" />
-                    <List text="Use for lifetime" />
+                    <List text="Expert career advisors with industry experience" />
+                    <List text="Personalized career path recommendations" />
+                    <List text="Real-time industry insights and trends" />
                   </div>
 
                   <div className="w-full px-3 sm:w-1/2 lg:w-full xl:w-1/2">
-                    <List text="Next.js" />
-                    <List text="Rich documentation" />
-                    <List text="Developer friendly" />
+                    <List text="Proven success stories and testimonials" />
+                    <List text="Comprehensive skill assessment tools" />
+                    <List text="Lifetime career support and guidance" />
                   </div>
                 </div>
               </div>
