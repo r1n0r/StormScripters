@@ -14,11 +14,8 @@ const AboutPage = () => {
   return (
     <>
       <Breadcrumb
-        pageName="About TBU
-        "
-        description="
-We help students explore careers, discover their strengths, and choose the right education path for their future.
-"
+        pageName="About Page"
+        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius eros eget sapien consectetur ultrices. Ut quis dapibus libero."
       />
       <AboutSectionOne />
       <AboutSectionTwo />
