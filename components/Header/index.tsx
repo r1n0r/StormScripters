@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import ThemeToggler from "./ThemeToggler";
 import menuData from "./menuData";
+import { useLanguage } from "@/context/LanguageContext";
 
 const Header = () => {
   // Navbar toggle
@@ -56,6 +57,16 @@ const Header = () => {
   };
 
   const usePathName = usePathname();
+
+  const { language, setLanguage, t } = useLanguage();
+
+  const toggleSubmenu = (id: number) => {
+    setOpenIndex(openIndex === id ? -1 : id);
+  };
+
+  const handleLanguageChange = (lang: 'en' | 'sq') => {
+    setLanguage(lang);
+  };
 
   return (
     <>
@@ -135,17 +146,17 @@ const Header = () => {
                                 : "text-dark hover:text-primary dark:text-white/70 dark:hover:text-white"
                             }`}
                           >
-                            {menuItem.title}
+                            {t(menuItem.title)}
                           </Link>
                         ) : (
                           <>
                             {isLoggedIn && (
                               <>
                                 <p
-                                  onClick={() => handleSubmenu(index)}
+                                  onClick={() => toggleSubmenu(index)}
                                   className="flex cursor-pointer items-center justify-between py-2 text-base text-dark group-hover:text-primary dark:text-white/70 dark:group-hover:text-white lg:mr-0 lg:inline-flex lg:px-0 lg:py-6"
                                 >
-                                  {menuItem.title}
+                                  {t(menuItem.title)}
                                   <span className="pl-3">
                                     <svg width="25" height="24" viewBox="0 0 25 24">
                                       <path
@@ -168,7 +179,7 @@ const Header = () => {
                                       key={index}
                                       className="block rounded py-2.5 text-sm text-dark hover:text-primary dark:text-white/70 dark:hover:text-white lg:px-3"
                                     >
-                                      {submenuItem.title}
+                                      {t(submenuItem.title)}
                                     </Link>
                                   ))}
                                 </div>
@@ -213,6 +224,28 @@ const Header = () => {
           </div>
         </div>
       </header>
+      <div className="flex items-center space-x-2 mr-4">
+        <button
+          onClick={() => handleLanguageChange('en')}
+          className={`px-3 py-1 rounded ${
+            language === 'en'
+              ? 'bg-blue-600 text-white'
+              : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300'
+          }`}
+        >
+          EN
+        </button>
+        <button
+          onClick={() => handleLanguageChange('sq')}
+          className={`px-3 py-1 rounded ${
+            language === 'sq'
+              ? 'bg-blue-600 text-white'
+              : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300'
+          }`}
+        >
+          SQ
+        </button>
+      </div>
     </>
   );
 };

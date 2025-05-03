@@ -72,6 +72,18 @@ const menuData: Menu[] = [
         path: "/other-university",
         newTab: false,
       },
+      {
+        id: 48,
+        title: "Jump Start",
+        path: "/jump-start",
+        newTab: false,
+      },
+      {
+        id: 49,
+        title: "Career Match Challenge",
+        path: "/career-match-challenge",
+        newTab: false,
+      },
     ],
   },
 ];

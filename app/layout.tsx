@@ -1,13 +1,19 @@
-"use client";
-
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import ScrollToTop from "@/components/ScrollToTop";
 import { Inter } from "next/font/google";
 import "node_modules/react-modal-video/css/modal-video.css";
 import "../styles/index.css";
+import type { Metadata } from "next";
+import { LanguageProvider } from "@/context/LanguageContext";
+import { Providers } from "./providers";
 
 const inter = Inter({ subsets: ["latin"] });
+
+export const metadata: Metadata = {
+  title: "StormScripters",
+  description: "Your trusted partner in software development",
+};
 
 export default function RootLayout({
   children,
@@ -23,15 +29,16 @@ export default function RootLayout({
       <head />
 
       <body className={`bg-[#FCFCFC] dark:bg-black ${inter.className}`}>
-        <Providers>
-          <Header />
-          {children}
-          <Footer />
-          <ScrollToTop />
-        </Providers>
+        <LanguageProvider>
+          <Providers>
+            <Header />
+            {children}
+            <Footer />
+            <ScrollToTop />
+          </Providers>
+        </LanguageProvider>
       </body>
     </html>
   );
 }
 
-import { Providers } from "./providers";
