@@ -32,6 +32,8 @@ const SigninPage = () => {
         localStorage.setItem("userName", data.full_name);
         setEmail("");
         setPassword("");
+        // Redirect to homepage
+        window.location.href = '/';
       }
     } catch (err) {
       setMessage("Login failed. Please try again.");
@@ -206,7 +208,7 @@ const SigninPage = () => {
                   </>
                 )}
                 <p className="text-center text-base font-medium text-body-color">
-                  Don’t you have an account?{" "}
+                  Don't you have an account?{" "}
                   <Link href="/signup" className="text-primary hover:underline">
                     Sign up
                   </Link>
