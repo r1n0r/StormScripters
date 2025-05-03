@@ -62,18 +62,30 @@ const menuData: Menu[] = [
       },
       {
         id: 46,
+        title: "Virtual Campus Tour",
+        path: "/virtual_campus_tour",
+        newTab: false,
+      },
+      {
+        id: 47,
+        title: "Chat with TBU Assistant",
+        path: "/chatbot",
+        newTab: false,
+      },
+      {
+        id: 48,
         title: "Sign In Page",
         path: "/signin",
         newTab: false,
       },
       {
-        id: 47,
+        id: 49,
         title: "Sign Up Page",
         path: "/signup",
         newTab: false,
       },
       {
-        id: 48,
+        id: 50,
         title: "Error Page",
         path: "/error",
         newTab: false,
