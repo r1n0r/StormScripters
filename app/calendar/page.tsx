@@ -1,28 +1,22 @@
 "use client";
-import Header from "@/components/Header";
+import { EventCalendar } from "@/components/event-calendar";
+import { Toaster } from "@/components/ui/toaster";
 
-const CalendarPage = () => {
+export default function CalendarPage() {
   return (
-    <>
-      <Header />
-      <section className="relative z-10 overflow-hidden pb-16 pt-36 md:pb-20 lg:pb-28 lg:pt-[180px]">
-        <div className="container">
-          <div className="-mx-4 flex flex-wrap">
-            <div className="w-full px-4">
-              <div className="shadow-three mx-auto max-w-[500px] rounded bg-white px-6 py-10 dark:bg-dark sm:p-[60px]">
-                <h3 className="mb-3 text-center text-2xl font-bold text-black dark:text-white sm:text-3xl">
-                  Calendar
-                </h3>
-                <p className="mb-11 text-center text-base font-medium text-body-color">
-                  Calendar functionality coming soon...
-                </p>
-              </div>
-            </div>
+    <div className="min-h-screen bg-background">
+      <div className="container mx-auto py-20 px-4">
+        <div className="max-w-4xl mx-auto">
+          <h1 className="text-4xl font-bold tracking-tight mb-4">University Events Calendar</h1>
+          <p className="text-lg text-muted-foreground mb-8">
+            May 4th is our only Open Day this month - Join us for a campus tour and meet our faculty!
+          </p>
+          <div className="bg-card rounded-lg shadow-lg p-6">
+            <EventCalendar />
           </div>
         </div>
-      </section>
-    </>
+        <Toaster />
+      </div>
+    </div>
   );
-};
-
-export default CalendarPage; 
+} 
