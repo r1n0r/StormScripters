@@ -8,7 +8,7 @@ const testimonialData: Testimonial[] = [
     name: "Arben Krasniqi",
     designation: "Computer Science Graduate",
     content:
-      "Falë udhëzimeve të këtij platformi, gjeta punën time të ëndrrave në një kompani teknologjike të njohur. Mjetet e vlerësimit të aftësive më ndihmuan të kuptoj forcat e mia dhe të zhvilloj një plan të qartë karriere.",
+      "Thanks to this platform's guidance, I found my dream job at a well-known tech company. The skill assessment tools helped me understand my strengths and develop a clear career plan.",
     image: "/images/testimonials/auth-01.png",
     star: 5,
   },
@@ -17,7 +17,7 @@ const testimonialData: Testimonial[] = [
     name: "Arian Hoxha",
     designation: "Business Administration Student",
     content:
-      "Burimet e platformës më ndihmuan të zbuloj pasionin tim për marketingun. Këshilluesit e karrierës më dhanë këshilla praktike që bënë ndryshimin në kërkimin tim të punës. Rekomandoj shumë!",
+      "The platform's resources helped me discover my passion for marketing. The career counselors provided practical advice that made a difference in my job search. Highly recommended!",
     image: "/images/testimonials/auth-02.png",
     star: 4,
   },
@@ -26,7 +26,7 @@ const testimonialData: Testimonial[] = [
     name: "Bardhyl Dervishi",
     designation: "Engineering Graduate",
     content:
-      "Mbështetja për planifikimin e karrierës ishte e jashtëzakonshme. Mora udhëzime për gjithçka, nga ndërtimi i CV-së deri te përgatitja për intervista. Njohuritë e industrisë më ndihmuan të marr vendime të informuara për karrierën time.",
+      "The career planning support was exceptional. I received guidance on everything from CV building to interview preparation. The industry insights helped me make informed career decisions.",
     image: "/images/testimonials/auth-03.png",
     star: 5,
   },
@@ -37,8 +37,8 @@ const Testimonials = () => {
     <section className="dark:bg-bg-color-dark bg-gray-light relative z-10 py-16 md:py-20 lg:py-28">
       <div className="container">
         <SectionTitle
-          title="Çfarë Thonë Studentët Tanë"
-          paragraph="Dëgjoni nga studentët tanë për përvojat dhe historitë e tyre të suksesit. Përshtypjet e tyre na ndihmojnë të përmirësojmë vazhdimisht shërbimet tona të zhvillimit të karrierës."
+          title="What Our Students Say"
+          paragraph="Hear from our students about their experiences and success stories. Their feedback helps us continuously improve our career development services."
           center
         />
 
