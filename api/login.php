@@ -21,7 +21,12 @@ $email = $mysqli->real_escape_string($data['email']);
 $result = $mysqli->query("SELECT id, password, full_name FROM users WHERE email='$email'");
 if ($row = $result->fetch_assoc()) {
     if (password_verify($data['password'], $row['password'])) {
-        echo json_encode(['success' => true, 'message' => 'Login successful!', 'full_name' => $row['full_name']]);
+        echo json_encode([
+            'success' => true, 
+            'message' => 'Login successful!', 
+            'full_name' => $row['full_name'],
+            'userId' => $row['id']
+        ]);
         exit;
     }
 }
